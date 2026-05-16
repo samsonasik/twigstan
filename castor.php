@@ -234,3 +234,13 @@ function qa(): int
 
     return 0;
 }
+
+#[AsTask(name: 'structarmed-analyze')]
+function structarmed_analyze(): int
+{
+    if ( ! fs()->exists('vendor')) {
+        composer_install();
+    }
+
+    return exit_code('vendor/bin/structarmed analyze');
+}

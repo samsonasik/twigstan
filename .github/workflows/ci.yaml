@@ -129,3 +129,6 @@ jobs:
 
             -   name: Analyze Composer dependencies
                 run: castor dependency-analyzer
+
+            -   name: StructArmed analyze
+                run: castor structarmed-analyze
