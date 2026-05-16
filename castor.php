@@ -230,6 +230,15 @@ function qa(): int
     }
 
     io()->success('No issues found');
+
+    io()->section('Running StructArmed');
+    $exitCode = structarmed_analyze();
+
+    if ($exitCode !== 0) {
+        return $exitCode;
+    }
+
+    io()->success('No issues found');
     io()->writeln('');
 
     return 0;
